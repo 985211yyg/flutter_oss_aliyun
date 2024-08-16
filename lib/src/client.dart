@@ -414,9 +414,11 @@ class Client with AuthMixin, HttpMixin implements ClientApi {
     };
 
     final String url = "https://$bucket.$endpoint/$filename";
+    print(">>>>>>${url}");
     final HttpRequest request = HttpRequest.put(url, headers: headers);
-
+    print(">>>>>>${request.url} ${request.headers}");
     auth.sign(request, bucket, filename);
+
     return _dio.put(
       request.url,
       data: multipartFile.finalize(),
