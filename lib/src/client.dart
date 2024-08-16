@@ -388,20 +388,13 @@ class Client with AuthMixin, HttpMixin implements ClientApi {
     String? fileKey,
   }) async {
     final String bucket = option?.bucketName ?? bucketName;
-    print(">>>>>>${bucket}");
-
     final String filename = fileKey ?? filepath.split('/').last;
-    print(">>>>>>${filename}");
-
     final Auth auth = await getAuth();
-    print(">>>>>>${auth.toString()}");
 
     final MultipartFile multipartFile = await MultipartFile.fromFile(
       filepath,
       filename: filename,
     );
-
-    print(">>>>>>${multipartFile.filename} ${multipartFile.contentType}");
 
     final Callback? callback = option?.callback;
 
@@ -421,9 +414,8 @@ class Client with AuthMixin, HttpMixin implements ClientApi {
     };
 
     final String url = "https://$bucket.$endpoint/$filename";
-    print(">>>>>>${url}");
     final HttpRequest request = HttpRequest.put(url, headers: headers);
-    print(">>>>>>${request.url} ${request.headers}");
+
     auth.sign(request, bucket, filename);
 
     return _dio.put(

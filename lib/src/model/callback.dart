@@ -45,7 +45,9 @@ class Callback {
     assert(callbackVar != null && callbackVar!.isNotEmpty);
 
     final String encodeString = json.encode(callbackVar);
-    final String base64encodeString = base64Encode(encodeString.codeUnits);
+    // 将 JSON 编码的字符串转换为 UTF-8 字节列表
+    final List<int> utf8Bytes = utf8.encode(encodeString);
+    final String base64encodeString = base64Encode(utf8Bytes);
 
     return base64encodeString.replaceAll("\n", "").replaceAll("\r", "");
   }
