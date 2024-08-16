@@ -417,7 +417,6 @@ class Client with AuthMixin, HttpMixin implements ClientApi {
     final HttpRequest request = HttpRequest.put(url, headers: headers);
 
     auth.sign(request, bucket, filename);
-
     return _dio.put(
       request.url,
       data: multipartFile.finalize(),
