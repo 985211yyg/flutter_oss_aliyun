@@ -418,14 +418,9 @@ class Client with AuthMixin, HttpMixin implements ClientApi {
 
     auth.sign(request, bucket, filename);
 
-    // 创建 FormData
-    FormData formData = FormData.fromMap({
-      'file': multipartFile,
-    });
-
     return _dio.put(
       request.url,
-      data: formData,
+      data: multipartFile.finalize(),
       options: Options(headers: request.headers),
       cancelToken: cancelToken,
       onSendProgress: option?.onSendProgress,
