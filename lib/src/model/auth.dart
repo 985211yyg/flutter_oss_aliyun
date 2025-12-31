@@ -1,7 +1,7 @@
-import 'package:flutter_oss_aliyun/src/extension/date_extension.dart';
-import 'package:flutter_oss_aliyun/src/model/request.dart';
-import 'package:flutter_oss_aliyun/src/model/signed_parameters.dart';
-import 'package:flutter_oss_aliyun/src/util/encrypt.dart';
+import 'package:oss_aliyun/src/extension/date_extension.dart';
+import 'package:oss_aliyun/src/model/request.dart';
+import 'package:oss_aliyun/src/model/signed_parameters.dart';
+import 'package:oss_aliyun/src/util/encrypt.dart';
 
 class Auth {
   const Auth({

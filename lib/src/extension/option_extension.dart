@@ -1,5 +1,5 @@
-import 'package:flutter_oss_aliyun/src/model/enums.dart';
-import 'package:flutter_oss_aliyun/src/model/request_option.dart';
+import 'package:oss_aliyun/src/model/enums.dart';
+import 'package:oss_aliyun/src/model/request_option.dart';
 
 extension PutRequestOptionExtension on PutRequestOption? {
   bool get forbidOverride {

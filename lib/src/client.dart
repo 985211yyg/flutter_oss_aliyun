@@ -1,13 +1,13 @@
 import 'dart:async';
 
 import 'package:dio/dio.dart';
-import 'package:flutter_oss_aliyun/src/auth_mixin.dart';
-import 'package:flutter_oss_aliyun/src/client_api.dart';
-import 'package:flutter_oss_aliyun/src/extension/date_extension.dart';
-import 'package:flutter_oss_aliyun/src/extension/file_extension.dart';
-import 'package:flutter_oss_aliyun/src/model/callback.dart';
-import 'package:flutter_oss_aliyun/src/model/request.dart';
-import 'package:flutter_oss_aliyun/src/model/request_option.dart';
+import 'package:oss_aliyun/src/auth_mixin.dart';
+import 'package:oss_aliyun/src/client_api.dart';
+import 'package:oss_aliyun/src/extension/date_extension.dart';
+import 'package:oss_aliyun/src/extension/file_extension.dart';
+import 'package:oss_aliyun/src/model/callback.dart';
+import 'package:oss_aliyun/src/model/request.dart';
+import 'package:oss_aliyun/src/model/request_option.dart';
 
 import 'extension/option_extension.dart';
 import 'http_mixin.dart';
